@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELORA — Fashion Store</title>
+
+    <meta name="description" content="VELORA — Boutique de vêtements en ligne. Découvrez notre nouvelle collection.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
+<div class="loader" id="loader">
+    <div class="loader-logo">VELORA</div>
+    <div class="loader-line">
+        <span></span>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     CURSOR
+===================================================== -->
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <a href="#home" class="logo">
+            VELORA<span>.</span>
+        </a>
+
+        <nav class="desktop-nav">
+
+            <a href="#home" class="nav-link active">Accueil</a>
+            <a href="#collection" class="nav-link">Collection</a>
+            <a href="#new" class="nav-link">Nouveautés</a>
+            <a href="#about" class="nav-link">À propos</a>
+            <a href="#contact" class="nav-link">Contact</a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="icon-btn" id="searchBtn" aria-label="Rechercher">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+            </button>
+
+            <button class="icon-btn favorite-header" id="favoriteBtn" aria-label="Favoris">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M20.8 8.7c0 5.5-8.8 10.3-8.8 10.3S3.2 14.2 3.2 8.7C3.2 5.8 5.4 4 8 4c1.6 0 3.1.8 4 2.1C12.9 4.8 14.4 4 16 4c2.6 0 4.8 1.8 4.8 4.7z"></path>
+                </svg>
+
+                <span class="badge" id="favoriteCount">0</span>
+
+            </button>
+
+            <button class="icon-btn cart-header" id="cartBtn" aria-label="Panier">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
+                    <circle cx="10" cy="20" r="1"></circle>
+                    <circle cx="18" cy="20" r="1"></circle>
+                </svg>
+
+                <span class="badge" id="cartCount">0</span>
+
+            </button>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-inner">
+
+        <a href="#home">Accueil</a>
+        <a href="#collection">Collection</a>
+        <a href="#new">Nouveautés</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+
+        <div class="mobile-socials">
+            <span>Instagram</span>
+            <span>TikTok</span>
+            <span>WhatsApp</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SEARCH PANEL
+===================================================== -->
+
+<div class="search-panel" id="searchPanel">
+
+    <div class="search-panel-inner">
+
+        <div class="search-top">
+
+            <span>RECHERCHER</span>
+
+            <button id="closeSearch">×</button>
+
+        </div>
+
+        <div class="search-input-wrap">
+
+            <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+            </svg>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Rechercher un vêtement..."
+                autocomplete="off"
+            >
+
+        </div>
+
+        <div id="searchResults" class="search-results"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-bg-text">
+        FASHION
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=90"
+            alt="Collection Velora"
+        >
+
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-small reveal">
+            NOUVELLE COLLECTION · 2026
+        </div>
+
+        <h1 class="hero-title reveal">
+            WEAR<br>
+            <em>YOUR</em><br>
+            STORY.
+        </h1>
+
+        <p class="hero-description reveal">
+            Des pièces pensées pour ceux qui veulent
+            exprimer leur style sans compromis.
+        </p>
+
+        <div class="hero-buttons reveal">
+
+            <a href="#collection" class="btn btn-light">
+                Découvrir la collection
+                <span>→</span>
+            </a>
+
+            <a href="#new" class="btn btn-outline">
+                Nouveautés
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-scroll">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-line"></div>
+    </div>
+
+    <div class="hero-number">
+        01 / 04
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MARQUEE
+===================================================== -->
+
+<section class="marquee">
+
+    <div class="marquee-track">
+
+        <span>NEW COLLECTION</span>
+        <i>✦</i>
+
+        <span>FREE DELIVERY</span>
+        <i>✦</i>
+
+        <span>PREMIUM QUALITY</span>
+        <i>✦</i>
+
+        <span>NEW COLLECTION</span>
+        <i>✦</i>
+
+        <span>FREE DELIVERY</span>
+        <i>✦</i>
+
+        <span>PREMIUM QUALITY</span>
+        <i>✦</i>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section class="categories section" id="collection">
+
+    <div class="section-heading reveal">
+
+        <div>
+            <span class="eyebrow">EXPLORE</span>
+
+            <h2>
+                Shop by <em>category</em>
+            </h2>
+        </div>
+
+        <p>
+            Découvrez notre sélection de pièces
+            contemporaines pensées pour votre quotidien.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <article class="category-card large reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85"
+                alt="Femme"
+            >
+
+            <div class="category-overlay"></div>
+
+            <div class="category-info">
+
+                <span>01</span>
+
+                <h3>Femme</h3>
+
+                <a href="#products" data-category="Femme">
+                    Explorer →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="category-card reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1000&q=85"
+                alt="Homme"
+            >
+
+            <div class="category-overlay"></div>
+
+            <div class="category-info">
+
+                <span>02</span>
+
+                <h3>Homme</h3>
+
+                <a href="#products" data-category="Homme">
+                    Explorer →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="category-card reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=85"
+                alt="Streetwear"
+            >
+
+            <div class="category-overlay"></div>
+
+            <div class="category-info">
+
+                <span>03</span>
+
+                <h3>Streetwear</h3>
+
+                <a href="#products" data-category="Streetwear">
+                    Explorer →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products section" id="new">
+
+    <div class="section-heading products-heading reveal">
+
+        <div>
+
+            <span class="eyebrow">OUR SELECTION</span>
+
+            <h2>
+                Selected <em>pieces</em>
+            </h2>
+
+        </div>
+
+        <div class="category-filters">
+
+            <button class="filter active" data-filter="all">
+                Tout
+            </button>
+
+            <button class="filter" data-filter="Femme">
+                Femme
+            </button>
+
+            <button class="filter" data-filter="Homme">
+                Homme
+            </button>
+
+            <button class="filter" data-filter="Streetwear">
+                Streetwear
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-grid" id="productGrid">
+        <!-- Produits générés par JavaScript -->
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDITORIAL
+===================================================== -->
+
+<section class="editorial">
+
+    <div class="editorial-image reveal">
+
+        <img
+            src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=1400&q=90"
+            alt="Velora Editorial"
+        >
+
+    </div>
+
+    <div class="editorial-content reveal">
+
+        <span class="eyebrow">
+            VELORA EDITORIAL
+        </span>
+
+        <h2>
+            Fashion is<br>
+            <em>an attitude.</em>
+        </h2>
+
+        <p>
+            Nous croyons que les vêtements ne sont pas
+            simplement des pièces que l'on porte.
+            Ils racontent qui vous êtes, votre énergie
+            et votre façon de voir le monde.
+        </p>
+
+        <a href="#about" class="text-link">
+            Notre histoire <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about section" id="about">
+
+    <div class="about-content reveal">
+
+        <span class="eyebrow">ABOUT VELORA</span>
+
+        <h2>
+            Less noise.<br>
+            <em>More style.</em>
+        </h2>
+
+        <p>
+            VELORA est une boutique de mode dédiée à une
+            esthétique moderne, minimaliste et intemporelle.
+            Chaque collection est choisie avec une attention
+            particulière portée aux matières, aux détails
+            et au confort.
+        </p>
+
+        <div class="about-stats">
+
+            <div>
+                <strong>2026</strong>
+                <span>Fondée</span>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <span>Passion</span>
+            </div>
+
+            <div>
+                <strong>24/7</strong>
+                <span>Online</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="about-visual reveal">
+
+        <div class="about-circle">
+            <span>VELORA</span>
+            <span>EST. 2026</span>
+        </div>
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85"
+                alt="Velora fashion"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="newsletter">
+
+    <div class="newsletter-content reveal">
+
+        <span class="eyebrow">
+            STAY IN THE LOOP
+        </span>
+
+        <h2>
+            Be the first<br>
+            <em>to know.</em>
+        </h2>
+
+        <p>
+            Recevez nos nouveautés, collections exclusives
+            et offres directement dans votre boîte mail.
+        </p>
+
+        <form id="newsletterForm">
+
+            <input
+                type="email"
+                placeholder="Votre adresse email"
+                required
+            >
+
+            <button type="submit">
+                S'inscrire →
+            </button>
+
+        </form>
+
+        <small>
+            Pas de spam. Uniquement les nouveautés Velora.
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                VELORA<span>.</span>
+            </a>
+
+            <p>
+                Contemporary fashion<br>
+                for modern individuals.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>SHOP</h4>
+
+            <a href="#collection">Femme</a>
+            <a href="#collection">Homme</a>
+            <a href="#collection">Streetwear</a>
+            <a href="#new">Nouveautés</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>HELP</h4>
+
+            <a href="#">Livraison</a>
+            <a href="#">Retours</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>FOLLOW</h4>
+
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Facebook</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 VELORA. All rights reserved.
+        </span>
+
+        <span>
+            Made with style.
+        </span>
+
+    </div>
+
+</footer>
+
+</main>
+
+
+<!-- =====================================================
+     CART SIDEBAR
+===================================================== -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <div>
+
+            <span class="eyebrow">
+                YOUR SELECTION
+            </span>
+
+            <h3>
+                Shopping Bag
+            </h3>
+
+        </div>
+
+        <button id="closeCart">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="empty-cart">
+
+            <div class="empty-icon">○</div>
+
+            <h4>Votre panier est vide</h4>
+
+            <p>
+                Ajoutez vos pièces préférées
+                pour commencer votre commande.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-bottom">
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong id="cartTotal">
+                0 MAD
+            </strong>
+
+        </div>
+
+        <button class="checkout-btn" id="checkoutBtn">
+            Commander via WhatsApp →
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     PRODUCT MODAL
+===================================================== -->
+
+<div class="product-modal" id="productModal">
+
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="modalClose">
+            ×
+        </button>
+
+        <div class="modal-image">
+
+            <img id="modalImage" src="" alt="">
+
+        </div>
+
+        <div class="modal-info">
+
+            <span class="eyebrow" id="modalCategory">
+                CATEGORY
+            </span>
+
+            <h2 id="modalName">
+                Product
+            </h2>
+
+            <div class="modal-price" id="modalPrice">
+                0 MAD
+            </div>
+
+            <p id="modalDescription">
+                Description du produit.
+            </p>
+
+            <div class="size-title">
+                Choisir une taille
+            </div>
+
+            <div class="sizes">
+
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>XL</button>
+
+            </div>
+
+            <button class="modal-add" id="modalAdd">
+                Ajouter au panier
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast" id="toast">
+
+    <span class="toast-icon">✓</span>
+
+    <div>
+        <strong id="toastTitle">
+            Ajouté au panier
+        </strong>
+
+        <small id="toastText">
+            Votre article a été ajouté.
+        </small>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+    href="https://wa.me/212600000000"
+    class="whatsapp"
+    target="_blank"
+    aria-label="WhatsApp"
+>
+
+    <span class="whatsapp-pulse"></span>
+
+    <svg viewBox="0 0 24 24">
+
+        <path d="M20 3.9A10 10 0 0 0 3.6 16.1L2 22l6-1.6A10 10 0 1 0 20 3.9z"></path>
+
+        <path d="M8.2 7.3c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.3.1.5-.1.7l-.6.7c.8 1.5 2 2.7 3.5 3.5l.7-.6c.2-.2.4-.2.7-.1l1.7.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.4.4-2.1.1-1.1-.4-2.8-1.3-4.2-2.7s-2.3-3.1-2.7-4.2c-.3-.7-.1-1.7.1-2.1z"></path>
+
+    </svg>
+
+</a>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
