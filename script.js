@@ -22,7 +22,7 @@ const products = [
         category: "Streetwear",
         price: 249,
         label: "BESTSELLER",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85",
+        image: "A1.jpg",
         description: "T-shirt oversized premium avec une coupe contemporaine et un tissu doux."
     },
 
